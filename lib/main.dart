@@ -9,36 +9,77 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                width: 100.0,
-                color: Colors.red,
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('images/cobra_commader_bust.jpeg'),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 100.0,
-                    width: 100.0,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    height: 100.0,
-                    width: 100.0,
-                    color: Colors.green,
-                  ),
-                ],
+              Text(
+                'Cobra Commander',
+                style: TextStyle(
+                    fontSize: 40.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Pacifico'),
               ),
-              Container(
-                width: 100.0,
-                color: Colors.blue,
+              Text(
+                'World Domination',
+                style: TextStyle(
+                    fontSize: 25.0,
+                    color: Colors.white,
+                    fontFamily: 'SourceSans3',
+                    letterSpacing: 2.5,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                  height: 20.0,
+                  width: 150.0,
+                  child: Divider(
+                    color: Color.fromARGB(255, 4, 90, 82),
+                  )),
+              Card(
+                margin: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 25.0,
+                ),
+                child: ListTile(
+                    leading: Icon(Icons.phone, color: Colors.teal),
+                    title: Text(
+                      '+1 123-555-1234',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 0, 77, 64),
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 20.0,
+                      ),
+                    )),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 25.0,
+                ),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'nojoe@email.com',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 77, 64),
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
